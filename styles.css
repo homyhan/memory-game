@@ -230,7 +230,7 @@ footer {
   font-size: 14px;
   color: #fff;
   text-align: center;
-  background: rgba(0,0,0,0.2);
+  background: rgb(0, 0, 0);
   width: 100%;
   position: fixed;
   bottom: 0;
