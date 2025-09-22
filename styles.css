@@ -1,4 +1,4 @@
-body {
+/* body {
   font-family: Arial, sans-serif;
   text-align: center;
   background: #f4f4f9;
@@ -56,3 +56,183 @@ h1 {
   background: #2980b9;
 }
 
+
+
+.modal {
+  display: none; 
+  position: fixed; 
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-box {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 400px;
+  text-align: center;
+}
+
+.close {
+  float: right;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+#modal-content{
+  font-size: 60px;
+} */
+
+
+
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  text-align: center;
+  background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+h1 {
+  margin: 12px 0 10px;
+  font-size: 48px;
+  color: #fff;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+}
+
+#restart {
+  padding: 12px 28px;
+  margin-bottom: 30px;
+  background: linear-gradient(135deg, #3498db, #2c3e50);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#restart:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(8, 100px);
+  grid-gap: 12px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.card {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, #4b6cb7, #182848);
+  color: white;
+  font-size: 34px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 14px;
+  user-select: none;
+  transform: scale(1);
+  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+
+.card:hover {
+  transform: scale(1.08);
+}
+
+.card.open {
+  background: #ecf0f1;
+  color: #2c3e50;
+}
+
+.card.matched {
+  background: #27ae60;
+  color: #fff;
+  pointer-events: none;
+  animation: pulse 0.6s ease;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+/* Modal */
+.modal {
+  display: none; 
+  position: fixed; 
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-box {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  max-width: 420px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+  animation: zoomIn 0.4s ease;
+}
+
+.close {
+  float: right;
+  font-size: 26px;
+  cursor: pointer;
+  color: #555;
+  transition: color 0.2s;
+}
+
+.close:hover {
+  color: #e74c3c;
+}
+
+#modal-content {
+  font-size: 48px;
+  margin-top: 20px;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes zoomIn {
+  from {transform: scale(0.7);}
+  to {transform: scale(1);}
+}
+
+footer {
+  margin-top: auto;
+  padding: 15px 0;
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+  background: rgba(0,0,0,0.2);
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
